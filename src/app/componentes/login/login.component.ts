@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit {
 
   irRegistrarse()
   {
-    this.router.navigate(['/registro']);
+    this.router.navigate(['/altaUsuario']);
   }
 
 
