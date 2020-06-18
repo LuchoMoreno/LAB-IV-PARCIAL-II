@@ -1,0 +1,26 @@
+<mat-card id="card" class = "card">
+
+	<mat-card-content>
+
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Correo electrónico</mat-label>
+      <textarea matInput placeholder="ejemplo@gmail.com" [(ngModel)]="email"></textarea>
+    </mat-form-field>
+
+    <BR>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Contraseña</mat-label>
+        <textarea matInput placeholder="***********" [(ngModel)]="password"></textarea>
+      </mat-form-field>
+
+    <BR>
+
+
+		<button mat-raised-button color="primary" style="margin-right:5px;" (click)="onSubmitLogin()">INGRESAR</button>
+		<button mat-raised-button color="primary" style="margin-right:5px;" (click)="irRegistrarse()">CREAR CUENTA</button>
+
+  </mat-card-content>
+
+</mat-card>

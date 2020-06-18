@@ -1,0 +1,59 @@
+<mat-card id="card" class = "card">
+
+    <form [formGroup]="miFormulario">
+
+
+	<mat-card-content>
+
+
+        <mat-form-field class="example-full-width">
+        <mat-label>Nombre del producto: </mat-label>
+        <textarea matInput placeholder="Nombre" [(ngModel)]="productosJSON.nombre" formControlName="nombre"></textarea>
+        </mat-form-field>
+
+    <BR>
+
+        <mat-form-field class="example-full-width">
+        <mat-label>Marca del producto: </mat-label>
+        <textarea matInput placeholder="Marca" [(ngModel)]="productosJSON.marca" formControlName="marca"></textarea>
+        </mat-form-field>
+
+    <BR>
+
+        <mat-form-field class="example-full-width">
+        <mat-label>Stock: </mat-label>
+        <textarea matInput placeholder="Stock" [(ngModel)]="productosJSON.stock" formControlName="stock"></textarea>
+        </mat-form-field>
+      
+    
+    <BR>
+
+        <mat-form-field class="example-full-width">
+        <mat-label>Tipo: </mat-label>
+        <textarea matInput placeholder="Tipo" [(ngModel)]="productosJSON.tipo" formControlName="tipo"></textarea>
+        </mat-form-field>
+      
+    
+    <BR>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Local (debe existir): </mat-label>
+            <textarea matInput placeholder="Local" [(ngModel)]="productosJSON.local" formControlName="local"></textarea>
+            </mat-form-field>
+    
+    <BR>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Precio: </mat-label>
+            <textarea matInput placeholder="Precio" [(ngModel)]="productosJSON.precio" formControlName="precio"></textarea>
+            </mat-form-field>
+          
+        
+    <BR>
+
+      <button mat-raised-button color="primary" style="margin-right:5px;" [disabled]="!miFormulario.valid" (click)="registrarProductoBD()">REGISTRAR</button>
+
+  </mat-card-content>
+
+</form>
+</mat-card>

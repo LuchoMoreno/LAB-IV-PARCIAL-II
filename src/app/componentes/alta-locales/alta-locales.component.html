@@ -1,0 +1,45 @@
+<mat-card id="card" class = "card">
+
+    <form [formGroup]="miFormulario">
+
+
+	<mat-card-content>
+
+
+        <mat-form-field class="example-full-width">
+        <mat-label>Nombre del local: </mat-label>
+        <textarea matInput placeholder="Nombre" [(ngModel)]="localesJSON.nombre" formControlName="nombre"></textarea>
+        </mat-form-field>
+
+    <BR>
+
+        <mat-form-field class="example-full-width">
+        <mat-label>Correo del local: </mat-label>
+        <textarea matInput placeholder="Correo" [(ngModel)]="localesJSON.correo" formControlName="correo"></textarea>
+        </mat-form-field>
+
+    <BR>
+
+        <mat-form-field class="example-full-width">
+        <mat-label>Telefono del local: </mat-label>
+        <textarea matInput placeholder="Telefono" [(ngModel)]="localesJSON.telefono" formControlName="telefono"></textarea>
+        </mat-form-field>
+      
+    
+    <BR>
+
+
+        <mat-form-field class="example-full-width">
+        <mat-label>Localidad: </mat-label>
+        <textarea matInput placeholder="Localidad" [(ngModel)]="localesJSON.localidad" formControlName="localidad"></textarea>
+        </mat-form-field>
+      
+    
+    <BR>
+
+      <button mat-raised-button color="primary" style="margin-right:5px;" [disabled]="!miFormulario.valid" (click)="registrarLocalBD()">REGISTRAR</button>
+
+  </mat-card-content>
+
+</form>
+</mat-card>

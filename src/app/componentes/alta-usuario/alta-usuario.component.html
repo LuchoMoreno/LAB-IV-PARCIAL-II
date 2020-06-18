@@ -1,0 +1,36 @@
+<mat-card id="card" class = "card">
+
+    <form [formGroup]="miFormulario">
+
+
+	<mat-card-content>
+
+
+        <mat-form-field class="example-full-width">
+        <mat-label>Correo</mat-label>
+        <textarea matInput placeholder="Correo" [(ngModel)]="usuarioJSON.correo" formControlName="correo"></textarea>
+        </mat-form-field>
+
+    <BR>
+
+        <mat-form-field class="example-full-width">
+        <mat-label>Nombre</mat-label>
+        <textarea matInput placeholder="Nombre" [(ngModel)]="usuarioJSON.nombre" formControlName="nombre"></textarea>
+        </mat-form-field>
+
+    <BR>
+
+        <mat-form-field class="example-full-width">
+        <mat-label>Contraseña</mat-label>
+        <textarea matInput placeholder="***********" [(ngModel)]="usuarioJSON.password" formControlName="password"></textarea>
+        </mat-form-field>
+      
+    
+        <BR>
+
+      <button mat-raised-button color="primary" style="margin-right:5px;" [disabled]="!miFormulario.valid" (click)="registrarUsuarioBD()">REGISTRAR</button>
+
+  </mat-card-content>
+
+</form>
+</mat-card>
