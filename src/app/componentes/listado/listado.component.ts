@@ -50,8 +50,7 @@ export class ListadoComponent implements OnInit {
             // Me voy a suscribir a la colección, y si el usuario está "ESPERANDO", se va a guardar en una lista de usuarios.
             fb.valueChanges().subscribe(datos =>{       // <-- MUESTRA CAMBIOS HECHOS EN LA BASE DE DATOS.
               
-              this.listaProductos = [];
-      
+    
               datos.forEach( (dato:any) =>{
       
                   this.listaProductos.push(dato);      // <--- LISTA DE USUARIOS.
@@ -59,12 +58,13 @@ export class ListadoComponent implements OnInit {
               });
       
             })
+
+            console.log(this.listaProductos);
     }
 
-
   
-
   } 
+
 
 
 
