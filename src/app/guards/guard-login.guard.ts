@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Router } from "@angular/router";
-
+import * as jwt_decode from "jwt-decode"; // ESTO LO OBTENGO CON npm i jwt-decode
 
 @Injectable({
   providedIn: 'root'
@@ -18,16 +18,17 @@ export class GuardLoginGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     
-      if (localStorage.getItem('token'))
-     {
+      try {
+        const token = localStorage.getItem('token');
+        const payload = jwt_decode(token);
+
         return true;
-
-      } else {
-
-        this.router.navigateByUrl("login");
-        
-        return false; // Si devuelve false, significa que NO se validó.
+      }
+      catch (error) {
+        this.router.navigateByUrl("/login");
+        return false;
       }
   }
-  
+
+
 }
