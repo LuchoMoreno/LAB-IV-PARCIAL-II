@@ -20,19 +20,16 @@ export class AuthService {
   
     this.AFauth.signInWithEmailAndPassword(email, password)
     
-    .then (user => resolve(user))
+    .then (user => resolve(user.user.getIdToken()
+    .then (d => {localStorage.setItem('token', d)})
+    
+  
+    ))
     
     .catch(err => rejected(err))
-    })
+  
+    });
 
-
-
-    
-
-
-    ;
-
-    
 }
 
 

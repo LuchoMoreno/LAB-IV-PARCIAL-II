@@ -32,26 +32,15 @@ export class LoginComponent implements OnInit {
 
   onSubmitLogin()
   {
-
   this.authService.login(this.email, this.password)
   
-  .then (res => this.validadoresAlLoguear())
+  .then (res => this.router.navigate(['/home']))
   
   .catch(err => alert("Los datos son incorrectos. No existe tal usuario"));
 
   }
 
 
-  validadoresAlLoguear()
-  {
-    var FirebaseTokenGenerator = require("firebase-token-generator");
-    var tokenGenerator = new FirebaseTokenGenerator("OLhzUJ5XBG1SjiaFpnWoXyBGy40GhsikDf3TrmLA");
-    var token = tokenGenerator.createToken({uid: "1", some: "arbitrary", data: this.email});
-    localStorage.setItem('token', token);
-    localStorage.setItem('correo', this.email);
-    this.router.navigate(['/home']);
-  }
-  
 
 
   irRegistrarse()

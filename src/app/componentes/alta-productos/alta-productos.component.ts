@@ -83,9 +83,9 @@ export class AltaProductosComponent implements OnInit {
         // Correo de la BD == Correo de la lista.
        if(doc.data().nombre == this.productosJSON.local)
        {
-         alert("El local existe. El producto se creó con éxito.")
-        this.bd.crear('productos',this.productosJSON);
-        this.router.navigate(['/home']);
+          alert("El local existe. El producto se creó con éxito.")
+          this.bd.crear('productos',this.productosJSON);
+          this.router.navigate(['/home']);
        }
 
        else
